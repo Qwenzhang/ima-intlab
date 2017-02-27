@@ -1,1 +1,46 @@
 
+void setup() {
+ size(600,800);
+ rectMode(CENTER);
+ ellipseMode(CENTER);
+ //noStroke();
+ }
+ 
+ void draw(){
+   int x=mouseX;
+   int y=mouseY;
+   background(0,45,90);
+   //translate(width/2, height/2);
+   //rotate(radians(frameCount*2));
+
+   //mouth
+ fill(255,40,0);
+ arc(300, 400, 200, 200, PI/2-(PI/4)*frameCount/500, PI/2+((PI/4)*frameCount/500),OPEN);
+ //scale(0.5*frameCount/10);
+
+ //arc(300, 400, 200, 200, 0, PI, OPEN);
+
+ //eyes
+  //left eye
+ fill(255);
+ ellipse(200,300,50,50);
+ fill(0);
+ ellipse(200+x/30,300+y/30,20,30);
+  
+  fill(0);
+  rect(200, 250,100,15);
+  
+  //right eye
+ fill(255);
+ ellipse(400,300,50,50);
+  fill(0);
+ ellipse(400+mouseX/30,300+mouseY/30,20,30);
+ 
+  fill(0);
+  rect(400, 250,100,15); 
+  
+ fill(0);
+ rect(width/2, height/2, 50,50,10);
+  translate(width/2, height/2);
+  rotate(PI*(frameCount/100));
+ }
